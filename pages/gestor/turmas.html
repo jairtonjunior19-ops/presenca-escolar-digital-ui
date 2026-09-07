@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Turmas - Sistema de Presença Escolar</title>
+    <link rel="stylesheet" href="gestor.css">
+</head>
+<body>
+
+    <div id="menu-gestor"></div>
+
+    <main class="container-principal">
+        <div class="cabecalho-pagina">
+            <div>
+                <h1>Turmas</h1>
+                <p class="subtitulo-pagina">Cadastro de turmas e associação de alunos</p>
+            </div>
+            <button class="botao-primario" onclick="abrirModalTurma()">+ Nova Turma</button>
+        </div>
+
+        <section class="caixa-painel">
+            <div class="wrapper-tabela">
+                <table class="tabela-dados">
+                    <thead>
+                        <tr>
+                            <th>Turma</th>
+                            <th>Alunos</th>
+                            <th>Ações</th>
+                        </tr>
+                    </thead>
+                    <tbody id="linhas-turmas"></tbody>
+                </table>
+            </div>
+            <p class="mensagem-vazia" id="mensagem-vazia-turmas" hidden>Nenhuma turma cadastrada.</p>
+        </section>
+    </main>
+
+    <div class="sobreposicao-modal" id="modal-turma" hidden>
+        <div class="caixa-modal">
+            <h2 id="titulo-modal-turma">Nova Turma</h2>
+            <div class="mensagem-erro-formulario" id="erro-formulario-turma" hidden></div>
+            <form id="formulario-turma">
+                <input type="hidden" id="id-turma-edicao">
+                <div class="grupo-campo">
+                    <label for="nome-turma">Nome da Turma</label>
+                    <input type="text" id="nome-turma" class="campo-entrada" required>
+                </div>
+                <div class="grupo-campo">
+                    <label>Alunos da Turma</label>
+                    <div id="lista-alunos-checkbox" class="lista-checkbox"></div>
+                </div>
+                <div class="acoes-modal">
+                    <button type="button" class="botao-secundario" onclick="fecharModalTurma()">Cancelar</button>
+                    <button type="submit" class="botao-primario">Salvar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="../../assets/js/armazenamento.js"></script>
+    <script src="../../assets/js/navegacao-gestor.js"></script>
+    <script src="turmas.js"></script>
+</body>
+</html>

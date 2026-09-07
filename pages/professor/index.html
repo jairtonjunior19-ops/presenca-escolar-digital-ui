@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Painel do Professor - Sistema de Presença Escolar</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="barra-navegacao">
+        <div class="marca-navegacao">
+            <span class="selo-logo">PD</span>
+            <h2>Presença Digital</h2>
+        </div>
+        <div class="perfil-usuario">
+            <span class="nome-sessao" id="saudacao-professor">Olá, Professor(a)</span>
+            <button class="botao-sair" onclick="sairDoSistemaProfessor()">Sair</button>
+        </div>
+    </header>
+
+    <main class="container-principal">
+
+        <section class="secao-boas-vindas">
+            <h1>Bem-vindo ao Sistema de Presença</h1>
+            <p>Canal de Chamada Digital Integrada</p>
+        </section>
+
+        <section class="grade-estatisticas">
+            <div class="cartao-estatistica">
+                <p class="titulo-estatistica">Turmas Sob Gestão</p>
+                <p class="valor-estatistica" id="valor-turmas">0</p>
+            </div>
+            <div class="cartao-estatistica destaque">
+                <p class="titulo-estatistica">Alunos Monitorados</p>
+                <p class="valor-estatistica" id="valor-alunos">0</p>
+            </div>
+            <div class="cartao-estatistica sucesso">
+                <p class="titulo-estatistica">Chamadas Enviadas</p>
+                <p class="valor-estatistica" id="valor-chamadas">0</p>
+            </div>
+        </section>
+
+        <div class="grade-conteudo">
+
+            <section class="caixa-painel">
+                <div class="cabecalho-caixa">
+                    <h3 class="titulo-caixa">Registrar Frequência Diária</h3>
+                    <span class="data-atual" id="data-atual"></span>
+                </div>
+
+                <div class="secao-filtro">
+                    <select class="selecao-formulario" id="select-turma" onchange="carregarAlunosDaTurma()">
+                        <option value="">Selecione a turma...</option>
+                    </select>
+                    <input type="text" class="selecao-formulario" id="campo-materia" placeholder="Matéria da aula">
+                    <select class="selecao-formulario" id="select-tipo-aula">
+                        <option value="Aula Normal">Aula Normal</option>
+                        <option value="Reposição">Reposição</option>
+                        <option value="Avaliação">Avaliação</option>
+                    </select>
+                </div>
+
+                <div style="overflow-x: auto;">
+                    <table class="tabela-frequencia">
+                        <thead>
+                            <tr>
+                                <th>Nome do Aluno</th>
+                                <th>Matrícula</th>
+                                <th style="width: 150px;">Registro de Frequência</th>
+                            </tr>
+                        </thead>
+                        <tbody id="linhas-alunos"></tbody>
+                    </table>
+                    <p class="mensagem-vazia" id="mensagem-vazia-alunos" hidden></p>
+                </div>
+
+                <button class="botao-salvar-frequencia" id="botao-salvar-chamada" onclick="salvarChamada()">SALVAR E ENVIAR AO SISTEMA</button>
+            </section>
+
+            <section class="caixa-painel" style="align-self: start;">
+                <div class="cabecalho-caixa">
+                    <h3 class="titulo-caixa">Últimas Chamadas</h3>
+                </div>
+                <ul class="lista-historico" id="lista-ultimas-chamadas"></ul>
+                <p class="mensagem-vazia" id="mensagem-vazia-historico" hidden>Nenhuma chamada enviada ainda.</p>
+            </section>
+
+        </div>
+    </main>
+
+    <footer class="rodape">
+        <p>Desenvolvido pelo Grupo Presença Digital • UESPI - UAPI</p>
+        <p style="margin-top: 5px; opacity: 0.7;">Tecnologia em Sistemas para Internet • Projeto Integrador 2 • 2026</p>
+    </footer>
+
+    <script src="../../assets/js/armazenamento.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

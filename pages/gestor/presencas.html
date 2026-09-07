@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registros de Presença - Sistema de Presença Escolar</title>
+    <link rel="stylesheet" href="gestor.css">
+</head>
+<body>
+
+    <div id="menu-gestor"></div>
+
+    <main class="container-principal">
+        <div class="cabecalho-pagina">
+            <div>
+                <h1>Registros de Presença</h1>
+                <p class="subtitulo-pagina">Chamadas enviadas pelos professores</p>
+            </div>
+        </div>
+
+        <section class="caixa-painel">
+            <div class="filtro-presencas">
+                <select class="selecao-formulario" id="filtro-professor" onchange="renderizarListaPresencas()">
+                    <option value="">Todos os professores</option>
+                </select>
+                <select class="selecao-formulario" id="filtro-turma" onchange="renderizarListaPresencas()">
+                    <option value="">Todas as turmas</option>
+                </select>
+            </div>
+
+            <div id="lista-registros-presenca"></div>
+            <p class="mensagem-vazia" id="mensagem-vazia-presencas" hidden>Nenhum registro de presença encontrado.</p>
+        </section>
+    </main>
+
+    <script src="../../assets/js/armazenamento.js"></script>
+    <script src="../../assets/js/navegacao-gestor.js"></script>
+    <script src="presencas.js"></script>
+</body>
+</html>

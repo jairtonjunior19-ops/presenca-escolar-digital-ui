@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Painel do Gestor - Sistema de Presença Escolar</title>
+    <link rel="stylesheet" href="gestor.css">
+</head>
+<body>
+
+    <div id="menu-gestor"></div>
+
+    <main class="container-principal">
+        <div class="cabecalho-pagina">
+            <div>
+                <h1>Visão Geral</h1>
+                <p class="subtitulo-pagina">Panorama consolidado da escola em tempo real</p>
+            </div>
+        </div>
+
+        <section class="grade-estatisticas">
+            <div class="cartao-estatistica">
+                <p class="titulo-estatistica">Professores Cadastrados</p>
+                <p class="valor-estatistica" id="valor-total-professores">0</p>
+            </div>
+            <div class="cartao-estatistica destaque">
+                <p class="titulo-estatistica">Alunos Cadastrados</p>
+                <p class="valor-estatistica" id="valor-total-alunos">0</p>
+            </div>
+            <div class="cartao-estatistica sucesso">
+                <p class="titulo-estatistica">Turmas Cadastradas</p>
+                <p class="valor-estatistica" id="valor-total-turmas">0</p>
+            </div>
+            <div class="cartao-estatistica">
+                <p class="titulo-estatistica">Chamadas Registradas</p>
+                <p class="valor-estatistica" id="valor-total-presencas">0</p>
+            </div>
+        </section>
+
+        <section class="caixa-painel">
+            <h3 class="titulo-caixa">Últimos Registros de Presença</h3>
+            <div class="wrapper-tabela">
+                <table class="tabela-dados">
+                    <thead>
+                        <tr>
+                            <th>Data</th>
+                            <th>Professor</th>
+                            <th>Turma</th>
+                            <th>Matéria</th>
+                        </tr>
+                    </thead>
+                    <tbody id="linhas-ultimos-registros"></tbody>
+                </table>
+            </div>
+            <p class="mensagem-vazia" id="mensagem-vazia-registros" hidden>Nenhum registro de presença enviado ainda.</p>
+        </section>
+    </main>
+
+    <script src="../../assets/js/armazenamento.js"></script>
+    <script src="../../assets/js/navegacao-gestor.js"></script>
+    <script src="dashboard.js"></script>
+</body>
+</html>

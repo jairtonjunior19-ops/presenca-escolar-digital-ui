@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Sistema de Presença Escolar</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container-login">
+        <div class="cabecalho-login">
+            <div class="logo-marcador">PD</div>
+            <h1>Presença Digital</h1>
+            <p>Sistema de Presença Escolar</p>
+        </div>
+
+        <div class="corpo-login">
+            <div id="mensagem-alerta" class="alerta"></div>
+
+            <form id="formulario-login">
+                <div class="grupo-campo">
+                    <label for="select-perfil">Perfil de Acesso</label>
+                    <select id="select-perfil" class="campo-entrada" required>
+                        <option value="" disabled selected>Selecione seu perfil...</option>
+                        <option value="professor">Professor(a)</option>
+                        <option value="gestor">Gestor(a) Escolar / TI</option>
+                    </select>
+                </div>
+
+                <div class="grupo-campo">
+                    <label for="campo-email">E-mail Institucional</label>
+                    <input type="email" id="campo-email" class="campo-entrada" placeholder="usuario@uapi.edu.br" required autocomplete="username">
+                </div>
+
+                <div class="grupo-campo">
+                    <label for="campo-senha">Senha de Acesso</label>
+                    <div class="grupo-senha">
+                        <input type="password" id="campo-senha" class="campo-entrada" placeholder="••••••••" required autocomplete="current-password">
+                        <button type="button" class="alternar-senha" id="botao-alternar-senha">Mostrar</button>
+                    </div>
+                </div>
+
+                <button type="submit" class="botao-entrar" id="botao-entrar">ENTRAR NO SISTEMA</button>
+            </form>
+
+            <div class="links-rodape">
+                <p><a href="#" id="link-esqueci-senha">Esqueceu sua senha?</a></p>
+            </div>
+        </div>
+    </div>
+
+    <script src="assets/js/armazenamento.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

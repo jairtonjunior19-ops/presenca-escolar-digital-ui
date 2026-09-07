@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Professores - Sistema de Presença Escolar</title>
+    <link rel="stylesheet" href="gestor.css">
+</head>
+<body>
+
+    <div id="menu-gestor"></div>
+
+    <main class="container-principal">
+        <div class="cabecalho-pagina">
+            <div>
+                <h1>Professores</h1>
+                <p class="subtitulo-pagina">Cadastro de professores e vínculo com turmas</p>
+            </div>
+            <button class="botao-primario" onclick="abrirModalProfessor()">+ Novo Professor</button>
+        </div>
+
+        <div class="aviso-turmas" id="aviso-sem-turmas" hidden>
+            Nenhuma turma cadastrada ainda. <a href="turmas.html">Cadastre uma turma</a> antes de vincular um professor a ela.
+        </div>
+
+        <section class="caixa-painel">
+            <div class="wrapper-tabela">
+                <table class="tabela-dados">
+                    <thead>
+                        <tr>
+                            <th>Nome</th>
+                            <th>E-mail</th>
+                            <th>Turmas Atendidas</th>
+                            <th>Ações</th>
+                        </tr>
+                    </thead>
+                    <tbody id="linhas-professores"></tbody>
+                </table>
+            </div>
+            <p class="mensagem-vazia" id="mensagem-vazia-professores" hidden>Nenhum professor cadastrado.</p>
+        </section>
+    </main>
+
+    <div class="sobreposicao-modal" id="modal-professor" hidden>
+        <div class="caixa-modal">
+            <h2 id="titulo-modal-professor">Novo Professor</h2>
+            <div class="mensagem-erro-formulario" id="erro-formulario-professor" hidden></div>
+            <form id="formulario-professor">
+                <input type="hidden" id="id-professor-edicao">
+                <div class="grupo-campo">
+                    <label for="nome-professor">Nome Completo</label>
+                    <input type="text" id="nome-professor" class="campo-entrada" required>
+                </div>
+                <div class="grupo-campo">
+                    <label for="email-professor">E-mail Institucional</label>
+                    <input type="email" id="email-professor" class="campo-entrada" required>
+                </div>
+                <div class="grupo-campo">
+                    <label for="senha-professor">Senha de Acesso</label>
+                    <input type="text" id="senha-professor" class="campo-entrada" required>
+                </div>
+                <div class="grupo-campo">
+                    <label>Turmas Atendidas</label>
+                    <div id="lista-turmas-checkbox" class="lista-checkbox"></div>
+                </div>
+                <div class="acoes-modal">
+                    <button type="button" class="botao-secundario" onclick="fecharModalProfessor()">Cancelar</button>
+                    <button type="submit" class="botao-primario">Salvar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="../../assets/js/armazenamento.js"></script>
+    <script src="../../assets/js/navegacao-gestor.js"></script>
+    <script src="professores.js"></script>
+</body>
+</html>

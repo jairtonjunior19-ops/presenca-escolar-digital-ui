@@ -1,0 +1,216 @@
+@import url("assets/css/tema.css");
+
+body {
+    background: var(--gradiente-fundo);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.container-login {
+    width: 100%;
+    max-width: 420px;
+    background: var(--fundo-cartao);
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.container-login:hover {
+    transform: translateY(-5px);
+}
+
+.cabecalho-login {
+    background-color: var(--cor-primaria);
+    color: #ffffff;
+    padding: 35px 30px;
+    text-align: center;
+    border-bottom: 5px solid var(--cor-secundaria);
+}
+
+.logo-marcador {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    font-weight: bold;
+    color: #ffffff;
+    margin: 0 auto 15px auto;
+    border: 2px dashed rgba(255, 255, 255, 0.5);
+}
+
+.cabecalho-login h1 {
+    font-size: 24px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    margin-bottom: 5px;
+}
+
+.cabecalho-login p {
+    font-size: 13px;
+    color: rgba(255, 255, 255, 0.8);
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+.corpo-login {
+    padding: 30px;
+}
+
+.grupo-campo {
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.grupo-campo label {
+    display: block;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--texto-principal);
+    margin-bottom: 8px;
+}
+
+.campo-entrada {
+    width: 100%;
+    padding: 12px 16px;
+    font-size: 15px;
+    border: 1.5px solid var(--borda-input);
+    border-radius: 8px;
+    background-color: #fafafa;
+    color: var(--texto-principal);
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+.campo-entrada:focus {
+    border-color: var(--foco-input);
+    background-color: #ffffff;
+    box-shadow: 0 0 8px rgba(52, 152, 219, 0.2);
+}
+
+.grupo-senha {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.grupo-senha .campo-entrada {
+    padding-right: 80px;
+}
+
+.alternar-senha {
+    position: absolute;
+    right: 15px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: var(--texto-secundario);
+    font-size: 12px;
+    font-weight: bold;
+    text-transform: uppercase;
+    outline: none;
+}
+
+.alternar-senha:hover {
+    color: var(--texto-principal);
+}
+
+.botao-entrar {
+    width: 100%;
+    padding: 14px;
+    background-color: var(--cor-primaria);
+    color: #ffffff;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.1s ease;
+    margin-top: 10px;
+    box-shadow: 0 4px 12px rgba(15, 76, 129, 0.3);
+}
+
+.botao-entrar:hover {
+    background-color: #0b3a63;
+}
+
+.botao-entrar:active {
+    transform: scale(0.98);
+}
+
+.botao-entrar:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+}
+
+.links-rodape {
+    margin-top: 25px;
+    text-align: center;
+    font-size: 13px;
+}
+
+.links-rodape a {
+    color: var(--cor-primaria);
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.links-rodape a:hover {
+    color: var(--foco-input);
+    text-decoration: underline;
+}
+
+.alerta {
+    padding: 12px;
+    border-radius: 6px;
+    font-size: 14px;
+    margin-bottom: 20px;
+    display: none;
+    animation: aparecer 0.3s ease;
+}
+
+.alerta-erro {
+    background-color: rgba(231, 76, 60, 0.1);
+    color: var(--cor-erro);
+    border: 1px solid var(--cor-erro);
+}
+
+.alerta-sucesso {
+    background-color: rgba(46, 204, 113, 0.1);
+    color: var(--cor-sucesso);
+    border: 1px solid var(--cor-sucesso);
+}
+
+@media (max-width: 480px) {
+    body {
+        padding: 10px;
+        background: #ffffff;
+    }
+
+    .container-login {
+        box-shadow: none;
+        border-radius: 0;
+    }
+
+    .cabecalho-login {
+        padding: 30px 20px;
+    }
+
+    .corpo-login {
+        padding: 20px;
+    }
+}
+
+@keyframes aparecer {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
